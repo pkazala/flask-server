@@ -35,12 +35,12 @@ def payment_webhook():
         abort(400)
     record = request.get_data()
     header = request.environ.get('HTTP_STRIPE_SIGNATURE')
-    endpoint_secred = 'whsec_dc6cc8c2dd57ec53722326c1cb825b0667953f9815de965404710e5db7ca28f9'
+    endpoint_secret = 'whsec_dc6cc8c2dd57ec53722326c1cb825b0667953f9815de965404710e5db7ca28f9'
     event = None
 
     try:
         event = stripe.Webhook.construct_event(
-            record, header, endpoint_secred
+            record, header, endpoint_secret
         )
     except ValueError as e:
         print('Invalid payload')
