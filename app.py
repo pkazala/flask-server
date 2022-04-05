@@ -24,8 +24,8 @@ DOMAIN = 'http://localhost:5000'
 
 input_json = 0
 mongo = os.environ.get("DB_PASSWORD")
-print(mongo)
-client = pymongo.MongoClient(mongo)
+password = "mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority"
+client = pymongo.MongoClient(password)
 db = client["vue-shop"]
 
 jwt = JWTManager(app)
