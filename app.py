@@ -17,13 +17,14 @@ load_dotenv()
 
 app.config['STRIPE_PUBLIC_KEY'] = 'pk_test_51KdFY6CBDTxkbXVTvYnNL56HRoRdGXGtdhwKnXC8UxyFvDDXB9u4dOciRMO59jL7eOOb7PAPiMjpx4qqrCzQZftL00RuNlUyo7'
 app.config['STRIPE_SECRET_KEY'] = 'sk_test_51KdFY6CBDTxkbXVTszg9nk8fmvxXKSldW86vwu1D5YzZRTiQED4mxrPhBnO0vmt2SijTvgy7NiyI6PQ3kaX1ZBzv00JgNtF22T'
+app.config['MONGODB_URI'] = 'mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority'
 
 stripe.api_key = app.config['STRIPE_SECRET_KEY']
 
 DOMAIN = 'http://localhost:5000'
 
 input_json = 0
-mongo = os.environ.get("DB_PASSWORD")
+mongo = os.getenv("DB_PASSWORD")
 client = pymongo.MongoClient(mongo)
 db = client["vue-shop"]
 
@@ -32,6 +33,7 @@ app.config['JWT_SECRET_KEY'] = '192492109249032057'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(hours=1)
 
 print("All good")
+
 
 @app.route('/')
 def welcome():
@@ -173,8 +175,8 @@ def create_checkout_session():
             'quantity': 1,
         }],
         mode='payment',
-        success_url="http://localhost:8080/success",
-        cancel_url="http://localhost:8080/cart",
+        success_url="https://vue-shop-app.netlify.app/success",
+        cancel_url="https://vue-shop-app.netlify.app/cart",
     )
 
     return redirect(session.url, code=303)
