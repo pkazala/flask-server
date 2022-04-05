@@ -4,6 +4,7 @@ import os
 import stripe
 import pymongo
 import os
+#from waitress import serve
 
 from flask import Flask, redirect, request, jsonify, json, abort
 from flask_cors import CORS
@@ -33,7 +34,7 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(hours=1)
 
 print("All good")
 
-@app.route('/start')
+@app.route('/')
 def welcome():
 	return 'Welcome to the flask server for the vue-shop web application!'
 
@@ -178,7 +179,6 @@ def create_checkout_session():
     )
 
     return redirect(session.url, code=303)
-
 
 if __name__ == '__main__':
     app.run(port=5000)
