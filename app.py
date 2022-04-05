@@ -23,7 +23,7 @@ stripe.api_key = app.config['STRIPE_SECRET_KEY']
 DOMAIN = 'http://localhost:5000'
 
 input_json = 0
-mongo = os.environ.get("DB_PASSWORD")
+mongo = os.environ.get("mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority")
 client = pymongo.MongoClient(mongo)
 db = client["vue-shop"]
 
