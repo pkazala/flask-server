@@ -80,7 +80,6 @@ def update_amount():
     print(input_json)
     return jsonify(input_json)
 
-
 @app.route('/payment_webhook', methods=['POST'])
 def payment_webhook():
     print("Webhook for payment was sent")
@@ -174,7 +173,7 @@ def create_checkout_session():
             'quantity': 1,
         }],
         mode='payment',
-        success_url="http://localhost:8080/",
+        success_url="http://localhost:8080/success",
         cancel_url="http://localhost:8080/cart",
     )
 
