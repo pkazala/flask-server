@@ -9,6 +9,7 @@ from flask import Flask, redirect, request, jsonify, json, abort
 from flask_cors import CORS
 from dotenv import load_dotenv
 from flask_jwt_extended import create_access_token, JWTManager
+#from boto.s3.connection import S3Connection
 
 app = Flask(__name__)
 app.debug = True
@@ -23,8 +24,8 @@ stripe.api_key = app.config['STRIPE_SECRET_KEY']
 DOMAIN = 'http://localhost:5000'
 
 input_json = 0
-mongo = os.environ.get("mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority")
-client = pymongo.MongoClient(mongo)
+#mongo = os.environ.get("mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority")
 db = client["vue-shop"]
 
 jwt = JWTManager(app)
