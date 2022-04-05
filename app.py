@@ -33,7 +33,7 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(hours=1)
 
 print("All good")
 
-@app.route('/')
+@app.route('/start')
 def welcome():
 	return 'Welcome to the flask server for the vue-shop web application!'
 
