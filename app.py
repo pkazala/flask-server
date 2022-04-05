@@ -1,5 +1,6 @@
 import datetime
 import hashlib
+import os
 import stripe
 import pymongo
 import os
@@ -8,7 +9,6 @@ from flask import Flask, redirect, request, jsonify, json, abort
 from flask_cors import CORS
 from dotenv import load_dotenv
 from flask_jwt_extended import create_access_token, JWTManager
-from boto.s3.connection import S3Connection
 
 app = Flask(__name__)
 app.debug = True
@@ -23,7 +23,7 @@ stripe.api_key = app.config['STRIPE_SECRET_KEY']
 DOMAIN = 'http://localhost:5000'
 
 input_json = 0
-mongo = S3Connection(os.environ['DB_PASSWORD'])
+mongo = os.environ.get('MONGODB_URI')
 client = pymongo.MongoClient(mongo)
 db = client["vue-shop"]
 
