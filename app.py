@@ -4,7 +4,6 @@ import os
 import stripe
 import pymongo
 import os
-from waitress import serve
 
 from flask import Flask, redirect, request, jsonify, json, abort
 from flask_cors import CORS
