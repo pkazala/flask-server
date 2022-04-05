@@ -24,7 +24,7 @@ stripe.api_key = app.config['STRIPE_SECRET_KEY']
 DOMAIN = 'http://localhost:5000'
 
 input_json = 0
-client = pymongo.MongoClient(app.config['MONGODB_URI'])
+client = pymongo.MongoClient("mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority")
 db = client["vue-shop"]
 
 jwt = JWTManager(app)
