@@ -17,7 +17,6 @@ load_dotenv()
 
 app.config['STRIPE_PUBLIC_KEY'] = 'pk_test_51KdFY6CBDTxkbXVTvYnNL56HRoRdGXGtdhwKnXC8UxyFvDDXB9u4dOciRMO59jL7eOOb7PAPiMjpx4qqrCzQZftL00RuNlUyo7'
 app.config['STRIPE_SECRET_KEY'] = 'sk_test_51KdFY6CBDTxkbXVTszg9nk8fmvxXKSldW86vwu1D5YzZRTiQED4mxrPhBnO0vmt2SijTvgy7NiyI6PQ3kaX1ZBzv00JgNtF22T'
-app.config['MONGODB_URI'] = 'mongodb+srv://pkazala:Legopepe1235@vue-shop.nuexl.mongodb.net/vue-shop?retryWrites=true&w=majority'
 
 stripe.api_key = app.config['STRIPE_SECRET_KEY']
 
