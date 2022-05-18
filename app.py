@@ -169,7 +169,7 @@ def create_checkout_session():
                 'product_data': {
                     'name': 'Checkout items',
                 },
-                'unit_amount': input_json['total'] * 100,
+                'unit_amount': input_json * 100,
             },
             'quantity': 1,
         }],
